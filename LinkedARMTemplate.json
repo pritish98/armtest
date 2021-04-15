@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {},
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2019-10-01",
+      "name": "linkedTemplate",
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "relativePath": "ChildClassTemplates/template.json",
+          "contentVersion": "1.0.0.0"
+        },
+        "parametersLink": {
+          "contentVersion": "1.0.0.0",
+          "relativePath": "ChildClassTemplates/parameters.json"
+        }
+      }
+    }
+  ],
+  "outputs": {
+  }
+}
